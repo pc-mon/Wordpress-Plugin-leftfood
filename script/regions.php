@@ -5,7 +5,7 @@ function pageregions() {
     if ($_POST['title']) {
         $wpdb->insert(
                 $wpdb->prefix . 'regions', array(
-            'title' => trim($_POST['title']),
+            'title' => sanitize_text_field($_POST['title']),
                 )
         );
     }
