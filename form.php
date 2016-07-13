@@ -78,25 +78,11 @@ register_uninstall_hook(__FILE__, 'myplugin_uninstall');
 
 //End : uninstall 
 function shortcode_form($atts) {
-    $form = '';
-    
-    if($_POST){
-        $form .= '<h1>ok</h1>';
-    }
-    $form .= <<< END
-            <form method="post">
-                <label>Title</label><input type="" /><br/>
-                <label>Details</label><textarea name=""></textarea><br/>
-                <label>Address</label><textarea name=""></textarea><br/>
-                <label>Left Food</label><textarea name=""></textarea><br/>
-                <label>Region</label><input type="" /><br/>
-                <label>Email</label><input type="" /><br/>
-                <label>Mobile</label><input type="" /><br/> 
-                <input type="submit" />
-            </form>
-            
-END;
-    return $form ;
+    ob_start();
+    require_once 'script/mainform.php';
+    $c = forn_controller();
+    $v = form_view();
+    return $c.$v ;
 }
 
 add_shortcode('lf', 'shortcode_form');
