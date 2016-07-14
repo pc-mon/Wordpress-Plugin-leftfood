@@ -2,7 +2,7 @@
 
 function forn_controller() {
     global $wpdb;
-    $form = '<h1>ok</h1>';
+     $form = '';
     if ($_POST['title']) {
         $wpdb->insert(
                 $wpdb->prefix . 'foodrequests', array(
@@ -15,7 +15,8 @@ function forn_controller() {
             'region' => (int) sanitize_text_field($_POST['r']),
                 )
         );
-    }
+        $form = '<h4>Thank you , we\'ll contact you soon '
+;    }
 
     return $form;
 }
@@ -31,14 +32,14 @@ function form_view() {
     $s .= '</select>';
     $form = ' 
             <form action="' . esc_url($_SERVER['REQUEST_URI']) . '"  method="post">
-                <label>Title</label><input type="" name="title" /><br/>
-                <label>Details</label><textarea name="details"></textarea><br/>
-                <label>Address</label><textarea name="address"></textarea><br/>
-                <label>Left Food</label><textarea name="ff"></textarea><br/>
-                <label>Region</label>' . $s . '<br/>
-                <label>Email</label><input type="email" name="email"/><br/>
-                <label>Mobile</label><input type="number" name="mobile" /><br/> 
-                <input type="submit" />
+                <label>عنوان الرسالة</label><input type="" name="title" /><br/>
+                <label>التفاصيل</label><textarea name="details"></textarea><br/>
+                <label>عنوان المنزل</label><textarea name="address"></textarea><br/>
+                <label>الطعام المتواجد</label><textarea name="ff"></textarea><br/>
+                <label>المنطقة</label>' . $s . '<br/>
+                <label>الاميل</label><input type="email" name="email"/><br/>
+                <label>الجوال</label><input type="number" name="mobile" /><br/> 
+                <input type="submit" value="إرسال" />
             </form>
             
 ';

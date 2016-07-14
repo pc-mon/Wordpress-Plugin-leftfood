@@ -95,9 +95,11 @@ add_action('admin_menu', 'my_admin_menu');
 function my_admin_menu() {
     
     add_menu_page('Left Food', 'Left Food\'s',   'manage_options', 'foodleft', 'mainpage', 'dashicons-tickets', 2);
-    add_submenu_page('foodleft','Regions', 'Region\'s', 'manage_options', 'regions', 'regions' );
+    add_submenu_page('foodleft','المناطق', 'المناطق', 'manage_options', 'regions', 'regions' );
+    add_submenu_page('foodleft','طلبات تواجد الطعام', 'طلبات تواجد الطعام', 'manage_options', 'requests', 'requests' );
 }
 
 function mainpage(){include_once 'script/mainpage.php';pagemain();}
 function regions(){include_once 'script/regions.php';pageregions();}
+function requests(){include_once 'script/requests.php';pagerequests();}
 ?>

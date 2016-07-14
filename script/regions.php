@@ -10,7 +10,7 @@ function pageregions() {
         );
     }
     $results = $wpdb->get_results('SELECT * FROM ' . $wpdb->prefix . 'regions ');
-    echo "<h1>Regions</h1>";
+    echo "<h1>المناطق</h1>";
     ?>
 
     <form method="post">
@@ -18,7 +18,7 @@ function pageregions() {
             <thead>
                 <tr>
                     <td>
-                        <h4>Create New Region</h4>
+                        <h4>إنشاء مناطق جديدة</h4>
                     </td>
                 </tr>
 
@@ -26,7 +26,7 @@ function pageregions() {
             <tbody>
                 <tr>
                     <th>
-                        <label for="title">Title</label>
+                        <label for="title">اسم المنطقة</label>
                     </th>
                     <td>
                         <input type="text" name="title" id="title" class="title" />
@@ -34,7 +34,7 @@ function pageregions() {
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="Create" />
+                        <input type="submit" value="إنشاء" />
                     </td>
                 </tr>
             </tbody>
@@ -47,8 +47,8 @@ function pageregions() {
                 <h4 style="padding-left:10px;padding-right:10px;"><?= $v->title ?></h4>
             </span>
             <span>
-                <a href="#d<?= $v->id ?>" title="Delete" >Delete</a>
-                <a href="#u<?= $v->id ?>" title="Update" >Update</a>
+                <!--<a href="#d<?= $v->id ?>" title="Delete" >Delete</a>-->
+                <!--<a href="#u<?= $v->id ?>" title="Update" >Update</a>-->
             </span>
         </div>
     <?php } ?>
