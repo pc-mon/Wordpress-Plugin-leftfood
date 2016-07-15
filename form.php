@@ -31,7 +31,7 @@ function myplugin_activate() {
 		   address  text,
 		   region  int(5) DEFAULT NULL,
 		   created  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-		   userid  int(11) NOT NULL DEFAULT 0,
+		   sentmail text NOT NULL DEFAULT 0,
 		   finished  int(11) NOT NULL,
 		  PRIMARY KEY ( id )
 		) {$charset_collate};

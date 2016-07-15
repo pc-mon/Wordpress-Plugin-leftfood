@@ -4,6 +4,7 @@ function forn_controller() {
     global $wpdb;
      $form = '';
     if ($_POST['title']) {
+        wp_mail(array($_POST['email'],''),'الرد من موقع عرب في تركيا','موقع عرب يشكرك '.' و سوف يتم التواصل معكم قريباً');
         $wpdb->insert(
                 $wpdb->prefix . 'foodrequests', array(
             'title' => sanitize_text_field($_POST['title']),
